@@ -1,6 +1,6 @@
-let url = `http://api.adorable.io/avatars/32131231`
+let url = `http://api.adorable.io/avatars/`
 
-const addImageToDom = () => {
+const addImageToDom = (imageNum) => {
     const container = document.querySelector('.container');
 
     // create div element and add it to DOM
@@ -9,10 +9,17 @@ const addImageToDom = () => {
 
     // div element will contain image element with our image coming from adorable api service.
     const imgElement = document.createElement('img');
-    imgElement.src= `${url}`;
+    imgElement.src= `${url}${imageNum}`;
 
     imageDiv.append(imgElement);
     container.append(imageDiv);
 }
 
-addImageToDom();
+const addImagesToDom = (num) => {
+    for (let i = 0; i < num; i++) {
+        addImageToDom(i);
+    }
+}
+
+addImagesToDom(15);
+
