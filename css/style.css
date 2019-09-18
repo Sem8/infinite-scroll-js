@@ -1,8 +1,12 @@
-.contaier {
+.container {
     max-width: 1280px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .one-fourth {
-    
+    width: calc(30% - 10px);
+    margin: 20px;
+
 }

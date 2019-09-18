@@ -23,3 +23,17 @@ const addImagesToDom = (num) => {
 
 addImagesToDom(15);
 
+// Figure out if user is scrolling ot the end of the page, if they are then add more images to the DOM
+window.addEventListener('scroll', function() {
+    // value of window.scrollY + window.innerHeight = value of current scroll or where you are in the DOM at the moment
+
+    // console.log(window.scrollY);
+    // console.log(window.innerHeight);
+    // console.log(window.scrollY + window.innerHeight);
+    // console.log(document.documentElement.scrollHeight);
+
+    if (window.scrollY + window.innerHeight + 100 >= document.documentElement.scrollHeight) {
+        addImagesToDom(15)
+    }
+})
+
